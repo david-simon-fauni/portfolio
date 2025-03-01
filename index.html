@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>David Simon C. Fauni</h1>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <ul class="tabs">
+                <li><a href="#" onclick="openTab(event, 'about')">About</a></li>
+                <li><a href="#" onclick="openTab(event, 'skills')">Skills</a></li>
+                <li><a href="#" onclick="openTab(event, 'experience')">Experience</a></li>
+                <li><a href="#" onclick="openTab(event, 'education')">Education</a></li>
+                <li><a href="#" onclick="openTab(event, 'projects')">Projects</a></li>
+                <li><a href="#" onclick="openTab(event, 'contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="tab-content">
+    
+        <section id="experience" class="tab">
+            <h2>Job Experience</h2>
+            <div class="job">
+                <h3>Intern - Software Developer</h3>
+                <p><strong>XYZ Tech Company</strong> | June 202X - August 202X</p>
+                <p>Worked on web development projects using HTML, CSS, JavaScript, and Java. Assisted in debugging and UI/UX design improvements.</p>
+            </div>
+    
+            <div class="job">
+                <h3>Freelance Web Developer</h3>
+                <p><strong>Self-Employed</strong> | 202X - Present</p>
+                <p>Designed and developed websites for small businesses and personal projects using modern web technologies.</p>
+            </div>
+        </section>
+    </div>
+    <div class="tab-content">
+        <section id="about" class="tab active">
+            <h2>About Me</h2>
+            <p>Hi, I'm David, an aspiring IT professional with a passion for software development and web technologies. I have experience in Java, web development, and Android Studio, and I'm always eager to learn and improve my skills. My goal is to create user-friendly applications that make technology more accessible for everyone</p>
+        </section>
+
+        <section id="skills" class="tab">
+            <h2>My Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Android Development</li>
+                <li>Data Structures & Algorithms</li>
+                <li>Human-Computer Interaction</li>
+            </ul>
+        </section>
+
+        <section id="education" class="tab">
+            <h2>Education History</h2>
+            <p><strong>Bachelor of Science in Information Technology</strong></p>
+            <p>St. Dominic College of Asia 2023-2025 - Present</p>
+        </section>
+
+        <section id="projects" class="tab">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>Description of my project.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="tab">
+            <h2>Contact Me</h2>
+            <p>Email: simonfauni08@gmail.com</p>
+            <p>Phone number: 09674972016</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
