@@ -186,3 +186,22 @@ footer {
     transform: scale(1.1);
     filter: brightness(1.3);
 }
+
+
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tabs li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tabs li a {
+        border-right: none;
+        border-bottom: 1px solid #555;
+        width: 100%;
+    }
+}
