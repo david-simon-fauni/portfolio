@@ -61,12 +61,15 @@
     </div>
 </footer>
 <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const tabs = document.querySelector('.tabs');
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const tabs = document.querySelector('.tabs');
   
-    menuToggle.addEventListener('click', () => {
-      tabs.classList.toggle('active');
+      menuToggle.addEventListener('click', () => {
+        tabs.classList.toggle('active');
+      });
     });
   </script>
+  
 </body>
 </html>
