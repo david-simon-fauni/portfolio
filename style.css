@@ -102,6 +102,14 @@ ul li {
     text-align: justify;
 }
 
+.home-text p {
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .contact-links {
     display: flex;
     justify-content: center;
