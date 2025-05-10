@@ -22,3 +22,9 @@ function openTab(event, tabName) {
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("about").style.display = "block";
 });
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
