@@ -30,14 +30,19 @@
   <header>
     <h1>David Simon C. Fauni</h1>
     <nav>
-      <ul class="tabs">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="techstack.html">Tech Stack</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+        <nav>
+            <div class="nav-container">
+              <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+              <ul class="tabs" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="techstack.html">Tech Stack</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
     </nav>
   </header>
 
@@ -107,5 +112,13 @@
       </div>
     </div>
   </footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const tabs = document.querySelector('.tabs');
+  
+    menuToggle.addEventListener('click', () => {
+      tabs.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
