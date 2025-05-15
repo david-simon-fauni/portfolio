@@ -53,7 +53,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #333;
+  background: black;
   padding: 0 20px;
 }
 
@@ -61,7 +61,7 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: #333;
+  background: black;
   padding: 0 20px;
 }
 
@@ -89,20 +89,23 @@ header {
 
 .about-container {
   display: flex;
+  flex-direction: row; /* default: side-by-side */
   align-items: flex-start;
-  background-color: #f5e1b8; /* light background */
-  padding: 30px 20px;
+  background-color: white;
+  padding: 20px;
   max-width: 900px;
-  margin: 40px auto;
+  margin: 120px auto;
   border-radius: 10px;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .profile-image img {
   width: 180px;
   height: 180px;
+  margin-top: 40px;
   border-radius: 50%;
-  border: 5px solid #2c3e50;
+  border: 5px solid black;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   object-fit: cover;
   flex-shrink: 0;
@@ -129,6 +132,30 @@ header {
   max-width: 100%;
 }
 
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .profile-image img {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text p {
+    text-indent: 0;
+    text-align: center;
+  }
+}
+
 
 .home-text {
   display: flex;
@@ -143,21 +170,25 @@ header {
   font-family: 'Titan One', cursive;
   font-size: 60px;
   color: white;
+  -webkit-text-stroke: 2px black;
   text-align: center;
   font-weight: 700;
 }
 
-  #typewriter-text {
-  font-family: 'Merriweather', serif;  font-size: 20px;
-  font-weight: 400;
-  white-space: nowrap;
-  overflow: hidden;
+#typewriter-text {
+  font-family: 'Merriweather', serif;
+  font-size: 24px;
+  text-align: center;
+  margin: 20px auto;
   color: white;
-  border-right: 2px solid #000;
-  width: 0;
+  max-width: 90vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
-  margin-top: 10px;
+  line-height: 1.4;
+  white-space: normal;
 }
+
 
 @keyframes typing {
   from { width: 0 }
@@ -166,6 +197,19 @@ header {
 
 @keyframes blink {
   50% { border-color: transparent }
+}
+
+@media (max-width: 768px) {
+  #typewriter-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #typewriter-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
 }
 
 .job {
@@ -195,16 +239,26 @@ header {
     font-family: 'Orelega One', cursive;
     font-size: 32px;
     text-align: center;
+    color: white;
     margin-bottom: 20px;
   }
 
   #education h2 {
     font-family: 'Orelega One', cursive;
     font-size: 32px;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
   }
+  
+  #education p {
+    color: white;
+  }
 
+  #education {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 .contact-links {
     display: flex;
     justify-content: center;
@@ -214,8 +268,8 @@ header {
 }
 
 .contact-btn {
-    background-color: #4a90e2;
-    color: white;
+    background-color: white;
+    color: black;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -224,13 +278,14 @@ header {
 }
 
 .contact-btn:hover {
-    background-color: #9013fe;
+    background-color: gold;
     transform: scale(1.05);
 }
 
   #contact h2 {
     font-family: 'Orelega One', cursive;
     font-size: 32px;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -319,6 +374,7 @@ footer {
   #techstack h2 {
     font-family: 'Orelega One', cursive;
     font-size: 32px;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
   }
