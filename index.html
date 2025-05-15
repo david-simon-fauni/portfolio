@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Simon Fauni</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+
+
 </head>
+
+
 <body>
+    <div id="tsparticles"></div>
     <header>
   <nav>
     <div class="nav-containers">
@@ -22,16 +31,10 @@
   </nav>
 </header>
     <main>
-<section id="about" class="tab active">
-    <div class="about-container">
-        <div class="profile-image">
-            <img src="profile.jpg" alt="Your Photo">
-        </div>
+<section id="index" class="tab active"> 
         <div class="home-text">
-            <h2>David Simon Fauni</h2>
-            <p>
-                Glaze through the journey of an IT student that lies ahead!
-              </p>
+            <h1>David Simon Fauni</h1>
+             <p id="typewriter-text"></p>
         </div>
     </div>
 </div>
@@ -60,5 +63,72 @@
         });
       </script>
       
+      <script>
+  const text = "There is 1 impostor behind this code. (1 impostor remain)";
+  const target = document.getElementById('typewriter-text');
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      target.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 50); // Adjust speed here
+    }
+  }
+
+  window.onload = typeWriter;
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+tsParticles.load("tsparticles", {
+  background: {
+    color: "#0d0d1a" // Galaxy background
+  },
+  particles: {
+    number: {
+      value: 20,
+      density: {
+        enable: true,
+        area: 800
+      }
+    },
+    shape: {
+      type: "image",
+      image: [
+        {
+          src: "https://particles.js.org/images/amongus_blue.png",
+          width: 50,
+          height: 50
+        },
+        {
+          src: "https://particles.js.org/images/amongus_red.png",
+          width: 50,
+          height: 50
+        },
+        {
+          src: "https://particles.js.org/images/amongus_white.png",
+          width: 50,
+          height: 50
+        }
+      ]
+    },
+    size: {
+      value: 30
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "right",
+      straight: true,
+      outModes: {
+        default: "out"
+      }
+    }
+  },
+  detectRetina: true
+});
+</script>
+
 </body>
 </html>

@@ -1,13 +1,18 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  animation: pastelBG 15s ease infinite;
-  background: linear-gradient(-45deg, #ffd1dc, #c1f0f6, #fce1a8, #d5f4e6);
-  background-size: 400% 400%;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
   text-align: center;
 }
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
 
 @keyframes pastelBG {
   0% {
@@ -83,40 +88,84 @@ header {
 }
 
 .about-container {
-  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  background-color: #f5e1b8; /* light background */
+  padding: 30px 20px;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 40px auto;
+  border-radius: 10px;
+  gap: 30px;
 }
 
 .profile-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid #2c3e50;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid #2c3e50;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
 }
 
 .about-text h2 {
-    font-size: 28px;
-    color: #2c3e50;
-    margin-bottom: 10px;
+  font-family: 'Orelega One', cursive;
+  font-size: 40px;
+  margin-bottom: 15px;
 }
 
 .about-text p {
-    font-size: 16px;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: justify;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color: black;
+  text-indent: 40px;
+  text-align: justify;
+  margin-bottom: 15px;
+  max-width: 100%;
 }
 
-.home-text p {
-    font-size: 16px;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;  
+  height: 80vh;      
+  text-align: center;
+}
+
+  .home-text h1 {
+  font-family: 'Titan One', cursive;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+}
+
+  #typewriter-text {
+  font-family: 'Merriweather', serif;  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  color: white;
+  border-right: 2px solid #000;
+  width: 0;
+  animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
+  margin-top: 10px;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
 }
 
 .job {
@@ -142,7 +191,19 @@ header {
 .job h3 {
     margin-bottom: 5px;
 }
+  #experience h2 {
+    font-family: 'Orelega One', cursive;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
+  #education h2 {
+    font-family: 'Orelega One', cursive;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
 .contact-links {
     display: flex;
@@ -167,6 +228,12 @@ header {
     transform: scale(1.05);
 }
 
+  #contact h2 {
+    font-family: 'Orelega One', cursive;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
 footer {
   position: fixed;
@@ -249,6 +316,13 @@ footer {
     height: 80px;
   }
 
+  #techstack h2 {
+    font-family: 'Orelega One', cursive;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
   .menu-toggle {
     display: none;
     background: none;
