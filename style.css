@@ -24,7 +24,7 @@ main {
 header {
     background-color: #333;
     color: white;
-    padding: 15px;
+
 }
 
 .nav-container {
@@ -61,7 +61,8 @@ header {
 
 .tabs-left li a:hover,
 .tabs-right li a:hover {
-  background: #666;
+
+  color: #666;
 }
 
 .about-container {
