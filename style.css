@@ -108,6 +108,7 @@ header {
     margin-left: 10px;
     margin-right: 10px;
   }
+}
 
 .about-container {
   display: flex;
@@ -403,4 +404,4 @@ footer {
     font-size: 32px;
     color: white;
     text-align: center;
-  }}
+  }
