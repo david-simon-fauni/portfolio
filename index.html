@@ -16,7 +16,7 @@
 
 <body>
     <div id="tsparticles"></div>
-    <header>
+<header>
   <nav>
     <div class="nav-containers">
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -30,6 +30,8 @@
     </div>
   </nav>
 </header>
+
+ 
     <main>
 <section id="index" class="tab active"> 
         <div class="home-text">
@@ -54,17 +56,44 @@
             </div>
         </div>
     </footer>
+
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const tabs = document.querySelector('.tabs-right');
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.body.classList.add("fade-out");
+      const href = this.getAttribute("href");
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const target = this.getAttribute('href');
       
-        menuToggle.addEventListener('click', () => {
-          tabs.classList.toggle('active');
-        });
-      </script>
-      
+      if (!target.startsWith('#') && !target.startsWith('http')) {
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.style.opacity = 0;
+        
+        setTimeout(() => {
+          window.location.href = target;
+        }, 500);
+      }
+    });
+  });
+</script>
+
       <script>
-  const text = "There is 1 impostor behind this code. (1 impostor remain)";
+  const text = "There is 1 impostor behind this code. (1 impostor remains)";
   const target = document.getElementById('typewriter-text');
   let index = 0;
 
@@ -72,12 +101,19 @@
     if (index < text.length) {
       target.textContent += text.charAt(index);
       index++;
-      setTimeout(typeWriter, 50); // Adjust speed here
+      setTimeout(typeWriter, 50);
     }
   }
 
   window.onload = typeWriter;
 </script>
+<script>
+  function toggleMenu() {
+    var navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+  }
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 <script>
 tsParticles.load("tsparticles", {
@@ -121,7 +157,7 @@ tsParticles.load("tsparticles", {
   emitters: {
     direction: "right",
     rate: {
-      delay: 9999, // only emit once
+      delay: 9999,
       quantity: 1
     },
     position: {
