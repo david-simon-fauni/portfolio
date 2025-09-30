@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - David Simon Fauni</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-containers">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="tabs-right" id="navLinks">
+          <li><a href="about.html">About</a></li>
+          <li><a href="techstack.html">Tech Stack</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="projects">
+      <h1>My Projects</h1>
+      <div class="project-list">
+
+        <!-- Project Card 1 -->
+        <div class="project-item">
+          <img src="images/itpm-project.png" alt="ITPM Project Screenshot">
+          <h3>IT Project Management Website</h3>
+          <p>My first project made during my ITPM course. Deployed using GitHub Pages.</p>
+          <a href="https://russel-aaron-macaspac.github.io/ITPM-Project/" target="_blank">View Project</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/david-simon-fauni-b31123365" target="_blank" title="LinkedIn">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/david-simon-fauni" target="_blank" title="GitHub">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        if (!href.startsWith("http") && !href.startsWith("#")) {
+          e.preventDefault();
+          document.body.classList.add("fade-out");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+
+    function toggleMenu() {
+      var navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
