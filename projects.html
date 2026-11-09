@@ -6,11 +6,16 @@
   <title>Projects - David Simon Fauni</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="tsparticles"></div>
   <header>
     <nav>
-      <div class="nav-containers">
+      <div class="nav-container">
+        <ul class="tabs-left">
+          <li><a href="index.html">David</a></li>
+        </ul>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <ul class="tabs-right" id="navLinks">
           <li><a href="about.html">About</a></li>
@@ -18,6 +23,8 @@
           <li><a href="experience.html">Experience</a></li>
           <li><a href="education.html">Education</a></li>
           <li><a href="projects.html">Projects</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -25,18 +32,46 @@
   </header>
 
   <main>
-    <section id="projects">
-      <h1>My Projects</h1>
-      <div class="project-list">
+    <section id="projects" class="page-shell">
+      <div class="page-intro">
+        <h1>Projects</h1>
+        <p>My technical work includes course-based systems, web projects, and learning activities that demonstrate my growth in software development, design, and problem solving.</p>
+      </div>
 
-        <!-- Project Card 1 -->
+      <div class="section-card">
+        <h2>IoT Project</h2>
+        <ul class="detail-list">
+          <li><strong>Project Title:</strong> Design and Development of an IoT-Based RFID Attendance, Schedule Validation, and Smart Door Access Control System for Faculty</li>
+          <li><strong>Description:</strong> This project is a smart classroom access and attendance system designed for faculty members. It combines RFID technology, schedule validation, and IoT-based access control to manage room entry and ensure that only authorized faculty with a valid schedule can unlock the classroom door.</li>
+          <li><strong>Objectives:</strong> The project aims to strengthen classroom security and improve attendance monitoring by allowing only scheduled faculty members to enter a room using their personalized RFID card. It also checks the assigned schedule before granting access and denies entry when no valid schedule is found.</li>
+          <li><strong>Technologies / Components Used:</strong> RFID reader, RFID tags, smart lock, microcontroller, web-based access management system, schedule database, IoT communication modules, and system monitoring interface for validation and attendance tracking.</li>
+          <li><strong>Your Role / Contribution:</strong> As the system analyst, I analyzed the project requirements, defined the system workflow, and ensured the access logic aligned with the classroom scheduling and validation process. I contributed to the design, requirement analysis, process documentation, and coordination with the team to support the successful implementation of the smart lock and RFID-based access system.</li>
+          <li><strong>Evidence:</strong> The project output is available in the GitHub repository: <a href="https://github.com/russel-aaron-macaspac/ai-faculty-management-web.git" target="_blank" rel="noopener noreferrer">AI Faculty Management Web</a>. Supporting evidence may include system screenshots, access logs, flow diagrams, and documentation from the project deployment.</li>
+          <li><strong>Project Output / Result:</strong> The system successfully unlocks the classroom door when a faculty member’s RFID is recognized and their schedule matches the assigned classroom. If the faculty member is not scheduled for that room or does not have a valid access schedule, the smart door remains locked to prevent unauthorized entry.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>Capstone Project</h2>
+        <ul class="detail-list">
+          <li><strong>Project Title:</strong> Development of an AI Assisted Web-Based Faculty Scheduling and Requirements Management System</li>
+          <li><strong>Description:</strong> This capstone project is an enhanced version of the earlier web-based faculty access system, expanded into an automated scheduling and requirements management platform. It is designed to help program chairs and faculty members manage schedules more efficiently, reduce manual scheduling work, and support digital clearance processes.</li>
+          <li><strong>Objectives:</strong> The main objective of the project is to automate faculty scheduling by allowing faculty members to input their availability and helping program chairs assign subjects more easily. The system uses AI-powered recommendations to generate non-overlapping schedules and provide choices that are efficient and conflict-free. It also supports e-clearance, allowing faculty members to complete clearance digitally instead of using manual processes.</li>
+          <li><strong>Technologies Used:</strong> Web-based application framework, AI-assisted recommendation engine, database management system, scheduling logic, role-based access control, and digital clearance workflow modules.</li>
+
+          <li><strong>Your Role:</strong> As the system analyst, I helped analyze the project requirements, define the workflow for schedule generation and clearance management, and ensure that the system design supported the key functions of the platform. I also contributed to the process documentation and overall design alignment with the project’s goals.</li>
+          <li><strong>Status:</strong> In progress; the system is being enhanced and improved as a more advanced scheduling and requirements management solution based on the existing web system.</li>
+          <li><strong>Evidence:</strong> The working website is the same web-based system previously shared and can be accessed through the project repository: <a href="https://github.com/russel-aaron-macaspac/ai-faculty-management-web.git" target="_blank" rel="noopener noreferrer">AI Faculty Management Web</a>.</li>
+        </ul>
+      </div>
+
+      <div class="project-list">
         <div class="project-item">
           <img src="images/itpm-project.png" alt="ITPM Project Screenshot">
           <h3>IT Project Management Website</h3>
-          <p>My first project made during my ITPM course. Deployed using GitHub Pages.</p>
+          <p>My first web-based project created during the ITPM course and deployed through GitHub Pages.</p>
           <a href="https://russel-aaron-macaspac.github.io/ITPM-Project/" target="_blank">View Project</a>
         </div>
-
       </div>
     </section>
   </main>
@@ -54,11 +89,12 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
   <script>
     document.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", function (e) {
         const href = this.getAttribute("href");
-        if (!href.startsWith("http") && !href.startsWith("#")) {
+        if (href && !href.startsWith("http") && !href.startsWith("#")) {
           e.preventDefault();
           document.body.classList.add("fade-out");
           setTimeout(() => {
@@ -76,6 +112,27 @@
       var navLinks = document.getElementById("navLinks");
       navLinks.classList.toggle("active");
     }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script>
+    tsParticles.load("tsparticles", {
+      background: { color: "#000" },
+      fullScreen: { enable: true, zIndex: -1 },
+      particles: {
+        number: { value: 50, density: { enable: true, area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.6 },
+        size: { value: 2, random: true },
+        move: {
+          enable: true,
+          direction: "right",
+          speed: 0.4,
+          outModes: { default: "out" }
+        }
+      }
+    });
   </script>
 </body>
 </html>

@@ -539,4 +539,75 @@ footer {
     margin-bottom: 15px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   }
+
+  .page-shell {
+    max-width: 1100px;
+    margin: 80px auto 90px;
+    padding: 20px;
+  }
+
+  .page-intro {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+  }
+
+  .page-intro h1 {
+    font-family: 'Orelega One', cursive;
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  .page-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #e5e5e5;
+  }
+
+  .section-card {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 14px;
+    padding: 28px 24px;
+    margin: 24px auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    max-width: 960px;
+    color: #111;
+  }
+
+  .section-card h2 {
+    font-family: 'Orelega One', cursive;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #111;
+  }
+
+  .detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+  }
+
+  .detail-list li {
+    background: #f7f7f7;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 10px;
+    padding: 16px 18px;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  .evidence-tag {
+    display: inline-block;
+    background: #e0ecff;
+    color: #163a78;
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 6px 8px 0 0;
+    border-radius: 999px;
+    font-weight: 700;
+  }
   
